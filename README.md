@@ -27,7 +27,7 @@ Comprehensive experiments conducted on three lane datasets have demonstrated the
 ## 🆕 News
 
 - 2024-09-10: [LaneMapping] code and dataset are publicly accessible! 🎉
-- 2024-09-02: our paper is accepted for publication in International Journal of Applied Earth Observation and Geoinformation(JAG)! 🎉
+- 2024-09-02: our paper is accepted for publication in the International Journal of Applied Earth Observation and Geoinformation(JAG)! 🎉
 
 ## 💻 Requirements
 
@@ -56,7 +56,7 @@ pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https
 
 ### c. Install mmcv-full. (optional: to validate LidarEncoder: SparseConv)
 
-follow the instructions here: https://mmdetection3d.readthedocs.io/en/latest/get_started.html
+Follow the instructions here: https://mmdetection3d.readthedocs.io/en/latest/get_started.html
 
 ```
 pip install -U openmim
@@ -71,8 +71,8 @@ git clone https://github.com/open-mmlab/mmdetection3d.git -b dev-1.x
 cd mmdetection3d
 pip install -v -e .
 # "-v" means verbose, or more output
-# "-e" means installing a project in edtiable mode,
-# thus any local modifications made to the code will take effect without reinstallation.
+# "-e" means installing a project in editable mode,
+# Thus, any local modifications made to the code will take effect without reinstallation.
 ```
 
 ### d. install other third party libs
@@ -146,15 +146,15 @@ WHU-LaserLane
 
 ## 🚅 Pretrained model and WHU-LaserLane Dataset
 
-You can download the pretrained model from[BaiduDisk](https://pan.baidu.com/s/1F5iAXs6HzHxWmJ4dwGBEmw?pwd=y2z9) or [GoogleDrive](https://drive.google.com/file/d/13QCwtbl45nyOOWTN8AyUgc_9z66Dyz0c/view?usp=sharing), and put it in folder `logs/` and unzip it.
+You can download the pre-trained model from[BaiduDisk](https://pan.baidu.com/s/1F5iAXs6HzHxWmJ4dwGBEmw?pwd=y2z9) or [GoogleDrive](https://drive.google.com/file/d/13QCwtbl45nyOOWTN8AyUgc_9z66Dyz0c/view?usp=sharing), and put it in folder `logs/` and unzip it.
 
-You can download only the generated BEV images and corresponding annotations of WHU-LaserLane dataset from[BaiduDisk](https://pan.baidu.com/s/1yiuU_V3VlTw7ogD8Tjjvag?pwd=47v6) or [GoogleDrive](), and put it in folder `./data/` and unzip it.
+You can download only the generated BEV images and corresponding annotations of WHU-LaserLane dataset from[BaiduDisk](https://pan.baidu.com/s/1yiuU_V3VlTw7ogD8Tjjvag?pwd=47v6) or [GoogleDrive](https://drive.google.com/file/d/16YDb_cwFr5iLkLzQSnuhkULjJ4JfjNIJ/view?usp=sharing), and put it in folder `./data/` and unzip it.
 
-Or whole WHU-LaserLane dataset from [BaiduDisk]().
+Or the whole WHU-LaserLane dataset from [BaiduDisk](https://pan.baidu.com/s/1u6ASAP3YyDUJFdyuq_dW4g?pwd=uupb).
 
 ## ⏳ Train
 
-To train the LaneMapping network, you should prepare the dataset, and put it in  './data/.'. Then, you use the follow command:
+To train the LaneMapping network, prepare the dataset and put it in  './data/.'. Then, you use the following command:
 
 ```bash
 $ python train_gpu_0.py
@@ -162,15 +162,18 @@ $ python train_gpu_0.py
 
 ## ✏️ Test
 
-To eval LaneMapping on the other two test areas, you can use the following commands, and do not forget modify the corresponding datapath in config file:
+To evaluate LaneMapping on the other two test areas, you can use the following commands, and do not forget to modify the corresponding datapath in the config file:
 
 ```bash
 $python test_gpu_0.py
 ```
 
+## ✏️ Project point cloud to the BEV image
+If you want to follow the BEV generation pipeline (preprocessing) in this article, please refer to [Las2BEV](https://github.com/MIXIAOXIN/Las2BEV)
+
 ## ✏️ Merge local lane map to the global map
 
-Firstly, convert the predicted lanes on BEV to the LiDAR coordinate system.
+Firstly, the predicted lanes on BEV are converted to the LiDAR coordinate system.
 ```bash
 $python ./baseline/utils/coor_img2pc.py
 ```
@@ -183,7 +186,7 @@ $python ./baseline/utils/merge_lines.py
 ## 💡 Citation
 
 If you find this repo helpful, please give us a 😍 star 😍.
-Please consider citing SparseDC if this program benefits your project
+Please consider citing **LaneMapping** if this program benefits your project
 
 ```Tex
 @article{MI2024104139,
